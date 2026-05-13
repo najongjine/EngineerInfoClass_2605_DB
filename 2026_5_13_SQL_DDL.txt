@@ -16,5 +16,13 @@ USING like_cnt::int4;
 ALTER TABLE t_user
 ADD CONSTRAINT uq_username UNIQUE (username);
 
+-- 칼럼에 제약조건 걸기. 최소 1개이상 입력.
 ALTER TABLE t_user
 ADD CONSTRAINT chk_username CHECK (length(username) >= 1);
+
+-- 제약조건 삭제해버리고 싶으면 DROP CONSTRAINT
+ALTER TABLE t_user
+DROP CONSTRAINT chk_username;
+
+-- 테이블 삭제
+DROP TABLE 뭐뭐뭐;
