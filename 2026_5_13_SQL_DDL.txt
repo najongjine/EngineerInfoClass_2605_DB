@@ -1,2 +1,20 @@
 ALTER TABLE t_board 
 ADD COLUMN view_count INT4;
+
+-- 칼럼 타입을 추가하고 싶을땐 ADD COLUMN
+ALTER TABLE t_board 
+ADD COLUMN like_cnt VARCHAR;
+
+-- 칼럼 타입을 실수했을땐 ALTER COLUMN 으로 고친다
+ALTER TABLE t_board 
+ALTER COLUMN like_cnt TYPE INT4
+USING like_cnt::int4;
+
+-- 칼럼 이름바꾸기는 시험에 못네요. DB회사마다 문법 다 다르데요
+
+-- 칼럼에 unqie 걸어주기(중복값 허용 안함)
+ALTER TABLE t_user
+ADD CONSTRAINT uq_username UNIQUE (username);
+
+ALTER TABLE t_user
+ADD CONSTRAINT chk_username CHECK (length(username) >= 1);
