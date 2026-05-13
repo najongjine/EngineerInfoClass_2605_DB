@@ -1,0 +1,41 @@
+
+-- t_students 테이블을 삭제하는 SQL을 완성
+DROP TABLE t_students;
+
+-- t_user 테이블 만들어게요
+-- DEFAULT는 기본값을 의미합니다.
+CREATE TABLE t_user(
+ id SERIAL PRIMARY KEY, -- 요게 제일 중요
+ username VARCHAR, -- String
+ name VARCHAR, --
+ email VARCHAR, --
+ created_dt TIMESTAMPTZ DEFAULT now()
+);
+
+-- 게시판 테이블 만들어게요
+CREATE TABLE t_board(
+ id SERIAL PRIMARY KEY,
+ title VARCHAR NOT NULL,
+ content VARCHAR,
+ created_dt TIMESTAMPTZ DEFAULT now(),
+ user_id INT4, 
+ CONSTRAINT fk_board_user
+ FOREIGN KEY(user_id) -- 왜래키
+ REFERENCES t_user(id) -- 참조
+ ON DELETE CASCADE -- 부모 데이터 삭제시, 자식 데이터도 연쇄해서 날려버려
+);
+
+-- ON UPDATE CASCADE 
+-- - 부모 테이블의 pk 값이 바뀌면, 자식 테이블의 fk 값도 자동으로 바뀜.
+
+CREATE TABLE t_comment(
+id SERIAL PRIMARY KEY,
+board_id INT4,
+cmt VARCHAR,
+CONSTRAINT fk_comment_board
+FOREIGN KEY(board_id)
+REFERENCES t_board(id)
+ON DELETE CASCADE
+ON UPDATE CASCADE
+);
+

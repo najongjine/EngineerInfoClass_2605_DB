@@ -1,0 +1,2 @@
+ALTER TABLE t_board 
+ADD COLUMN view_count INT4;
