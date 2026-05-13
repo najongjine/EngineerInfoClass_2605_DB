@@ -26,3 +26,6 @@ DROP CONSTRAINT chk_username;
 
 -- 테이블 삭제
 DROP TABLE 뭐뭐뭐;
+
+-- ADD CONSTRAINT 에서 문제내는건 거진 3개.
+-- UNIQUE, CHECK, FOREIGN KEY
