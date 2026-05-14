@@ -1,0 +1,11 @@
+-- Data Manipulation Language (데이터 조작어)
+-- p 261
+INSERT INTO t_comment
+VALUES (9999,9999,'첫댓글');
+
+INSERT INTO t_board(title,content,user_id)
+VALUES('첫글','았싸 1등이다',9999);
+
+SELECT
+*
+FROM t_board;
