@@ -20,3 +20,7 @@ FROM t_user;
 SELECT
 *
 FROM t_comment;
+
+UPDATE t_user 
+SET name='모모'
+, email='모모@google.com';
