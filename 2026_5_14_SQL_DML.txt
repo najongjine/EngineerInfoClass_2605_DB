@@ -6,6 +6,10 @@ VALUES (9999,9999,'첫댓글');
 INSERT INTO t_board(title,content,user_id)
 VALUES('첫글','았싸 1등이다',9999);
 
+
+INSERT INTO t_user(username,name,email)
+VALUES('페페','페페','페페@google.com');
+
 SELECT
 *
 FROM t_board;
