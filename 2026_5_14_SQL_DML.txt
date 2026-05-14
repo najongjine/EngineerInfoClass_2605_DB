@@ -21,6 +21,9 @@ SELECT
 *
 FROM t_comment;
 
+-- UPDATE, DELETE 을 할때는 무조건 WHERE 조건 넣어야해요
 UPDATE t_user 
 SET name='모모'
-, email='모모@google.com';
+, email='모모@google.com'
+WHERE id=1;
+
