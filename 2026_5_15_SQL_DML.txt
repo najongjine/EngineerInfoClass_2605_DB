@@ -1,0 +1,18 @@
+-- select
+-- 조회하다, 데이터를 읽다
+-- 지금까지 했던 DDL 은 형태가 좀 꽉 잡혀딨다면,
+-- DML중에 SELECT는 형태가 많이 유연해요
+
+SELECT 
+id,
+username,
+name
+FROM t_user; 
+
+SELECT
+*
+FROM t_board;
+
+UPDATE t_board AS b
+SET view_count=b.id,
+like_cnt=b.id;
