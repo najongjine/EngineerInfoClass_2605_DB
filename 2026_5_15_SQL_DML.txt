@@ -9,14 +9,38 @@ username,
 name
 FROM t_user; 
 
-SELECT
+SELECT -- 3
 id,
 title,
 user_id,
 view_count
-FROM t_board;
+FROM t_board  -- 1
+WHERE view_count > 1   -- 2
+;
 
 -- 시험엔 이렇게까진 난이도 안나올거에요
 UPDATE t_board AS b
 SET view_count=b.id,
 like_cnt=b.id;
+
+
+
+SELECT 
+id
+FROM t_board
+WHERE id =1 OR id=2
+;
+SELECT 
+id
+FROM t_board
+WHERE id IN (1,2)
+;
+
+
+SELECT 
+id,
+user_id
+FROM t_board
+WHERE id =1 AND user_id=1
+;
+
